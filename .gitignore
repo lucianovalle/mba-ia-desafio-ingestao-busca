@@ -5,3 +5,4 @@ src/__pycache__/
 *.pyc
 src/show_tables.py
 src/test_models.py
+.git_backup_antigo/
