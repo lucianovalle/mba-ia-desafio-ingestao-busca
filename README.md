@@ -11,12 +11,25 @@ Usa **Gemini** para embeddings e para a LLM, com PostgreSQL + pgVector.
 
 ## Como executar
 
+Entre na pasta do projeto antes de qualquer comando:
+
+```bash
+cd mba-ia-desafio-ingestao-busca
+```
+
 ### 1. Ambiente virtual
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
+
+No Ubuntu/WSL o comando `python` só funciona **depois** de ativar o `venv`.
+Se aparecer `Command 'python' not found`, rode de novo:
+
+```bash
+source venv/bin/activate
 ```
 
 ### 2. Variáveis de ambiente
@@ -35,6 +48,8 @@ Preencha no `.env`:
 - `PDF_PATH` — ex.: `document.pdf`
 
 ### 3. Subir o banco
+
+(na pasta do projeto, onde está o `docker-compose.yml`)
 
 ```bash
 docker compose up -d
@@ -63,18 +78,16 @@ RESPOSTA: O faturamento da Alfa Energia S.A. é de R$ 722.875.391,46.
 
 PERGUNTA: Em que ano foi fundada a Alfa IA Indústria?
 RESPOSTA: A Alfa IA Indústria foi fundada em 2020.
-
 ```
 
-```
 Exemplos de perguntas fora do contexto:
 
+```
 PERGUNTA: Qual é a capital da França?
 RESPOSTA: Não tenho informações necessárias para responder sua pergunta.
 
 PERGUNTA: Quantos clientes temos em 2024?
 RESPOSTA: Não tenho informações necessárias para responder sua pergunta.
-
 ```
 
 Para sair do chat: `sair`
