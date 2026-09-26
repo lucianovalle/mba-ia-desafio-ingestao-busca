@@ -105,7 +105,7 @@ def search_prompt(question=None):
         resposta = llm.invoke(prompt)
         return resposta.content
 
-    # se ja veio pergunta, responde agora
+    # se ja veio pergunta, responde
     if question:
         return responder(question)
 
